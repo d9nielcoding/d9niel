@@ -36,7 +36,7 @@ const Header: React.FC = () => {
     }
   };
   return (
-    <header className="flex justify-between items-center py-3 fixed left-1/2 -translate-x-1/2 top-0 max-w-screen-lg mx-auto w-full bg-background">
+    <header className="flex justify-between items-center py-3 fixed left-1/2 -translate-x-1/2 top-0 max-w-screen-lg mx-auto w-full bg-background rounded-b-lg px-4">
       <Link href="/" className="flex items-center gap-3">
         <Image src={d9nielNotion} alt="D9niel" width={28} height={28} />
         <h1 className="text-xl font-bold font-funnel">D9niel</h1>

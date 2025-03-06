@@ -14,33 +14,25 @@ const Footer: React.FC = () => {
       <div className="flex gap-4 my-8">
         <Tooltip description="Contact me as a developer">
           <Link href="mailto:daniel.cai09g@nctu.edu.tw">
-            <div className="relative flex">
+            <div className="flex justify-center items-center rounded-full bg-primary h-8">
               <span className="relative z-10 flex h-8 w-8 items-center justify-center">
                 <EnvelopeClosedIcon className="h-4 w-4 text-white" />
               </span>
               <span className="relative z-10 flex h-8 w-8 items-center justify-center -ml-2">
                 <CodeIcon className="h-4 w-4 text-white" />
               </span>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-14">
-                <div className="absolute left-0 h-full w-8 rounded-full bg-primary" />
-                <div className="absolute right-0 h-full w-8 rounded-full bg-primary" />
-              </div>
             </div>
           </Link>
         </Tooltip>
         <Tooltip description="Contact me for other services">
           <Link href="mailto:d9niel.work@gmail.com">
-            <div className="relative flex">
+            <div className="flex justify-center items-center rounded-full bg-primary h-8">
               <span className="relative z-10 flex h-8 w-8 items-center justify-center">
                 <EnvelopeClosedIcon className="h-4 w-4 text-white" />
               </span>
               <span className="relative z-10 flex h-8 w-8 items-center justify-center -ml-2">
                 <ChatBubbleIcon className="h-4 w-4 text-white" />
               </span>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-14">
-                <div className="absolute left-0 h-full w-8 rounded-full bg-primary" />
-                <div className="absolute right-0 h-full w-8 rounded-full bg-primary" />
-              </div>
             </div>
           </Link>
         </Tooltip>
