@@ -1,0 +1,154 @@
+'use client';
+import SectionTitle from '@/components/SectionTitle';
+import { SkillLogo1, SkillLogo2, SkillLogo3 } from '@/constants/skill-images';
+
+import { useGSAP } from '@gsap/react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+import { useMemo, useRef, useState } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const SkillsStackSection: React.FC = () => {
+  const [isReversed, setIsReversed] = useState(false);
+  const movingContainer = useRef<HTMLDivElement>(null);
+  let timeline = useRef<GSAPTimeline>(null);
+
+  useGSAP(
+    () => {
+      const setupInfiniteMarqueeTimeline = () => {
+        timeline.current?.kill();
+        gsap.set(movingContainer.current, {
+          xPercent: isReversed ? -50 : 0,
+        });
+        timeline.current = gsap
+          .timeline({
+            defaults: { ease: 'none', repeat: -1 },
+          })
+          .to(movingContainer.current, {
+            xPercent: isReversed ? 0 : -50,
+            duration: 20,
+          })
+          .set(movingContainer.current, { xPercent: 0 });
+      };
+
+      setupInfiniteMarqueeTimeline();
+    },
+    { dependencies: [isReversed] }
+  );
+
+  let timelineTimeScaleTween = useRef<GSAPTween>(null);
+
+  const onPointerEnter = () => {
+    if (!timeline.current) return;
+    timelineTimeScaleTween.current?.kill();
+    timelineTimeScaleTween.current = gsap.to(timeline.current, {
+      timeScale: 0.25,
+      duration: 0.4,
+    });
+  };
+
+  const onPointerLeave = () => {
+    if (!timeline.current) return;
+    timelineTimeScaleTween.current?.kill();
+    timelineTimeScaleTween.current = gsap.to(timeline.current, {
+      timeScale: 1,
+      duration: 0.2,
+    });
+  };
+
+  // Duplicate skills array for seamless infinite scroll
+  const skillList = [...Object.keys(SkillLogo1), ...Object.keys(SkillLogo1)];
+  const skillList2 = [...Object.keys(SkillLogo2), ...Object.keys(SkillLogo2)];
+  const skillList3 = [...Object.keys(SkillLogo3), ...Object.keys(SkillLogo3)];
+  const listContent = useMemo(
+    () => (
+      <div className="flex flex-col gap-4">
+        <div className="flex gap-4 -translate-x-10">
+          {skillList.map((skill, index) => {
+            return (
+              <SkillCard key={`skill-${index}`}>
+                <Image
+                  src={SkillLogo1[skill]}
+                  alt={skill}
+                  height={46}
+                  width={46}
+                />
+              </SkillCard>
+            );
+          })}
+        </div>
+        <div className="flex gap-4">
+          {skillList2.map((skill, index) => {
+            return (
+              <SkillCard key={`skill-${index}`}>
+                <Image
+                  src={SkillLogo2[skill]}
+                  alt={skill}
+                  height={46}
+                  width={46}
+                />
+              </SkillCard>
+            );
+          })}
+        </div>
+        <div className="flex gap-4 translate-x-10">
+          {skillList3.map((skill, index) => {
+            return (
+              <SkillCard key={`skill-${index}`}>
+                <Image
+                  src={SkillLogo3[skill]}
+                  alt={skill}
+                  height={46}
+                  width={46}
+                />
+              </SkillCard>
+            );
+          })}
+        </div>
+      </div>
+    ),
+    []
+  );
+
+  return (
+    <div className="flex flex-col gap-4">
+      <SectionTitle title="Skills Stack" />
+      <div
+        className="overflow-hidden"
+        onPointerEnter={onPointerEnter}
+        onPointerLeave={onPointerLeave}
+        style={{
+          maskImage:
+            'linear-gradient(to right, transparent 0%, black 50%, black 50%, transparent 100%)',
+        }}
+      >
+        <div
+          ref={movingContainer}
+          className="flex gap-4 w-fit py-10"
+          style={{
+            maskImage:
+              'linear-gradient(to bottom, transparent 0%, black 40%, black 60%, transparent 100%)',
+          }}
+        >
+          {/* FIXME: will dash forward a little bit when the list is finished */}
+          {listContent}
+          {listContent}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const SkillCard: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+  return (
+    <div
+      className={`flex flex-col items-center justify-center h-24 w-24 border border-neutral-700 rounded-xl bg-neutral-900  transition-all duration-300 ${children ? 'hover:shadow-[0_0_5px_5px_rgba(255,255,255,0.1)]' : ''}`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default SkillsStackSection;
