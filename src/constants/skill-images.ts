@@ -18,29 +18,65 @@ import viteLogo from '@/assets/images/vite.png';
 import vueLogo from '@/assets/images/vue.png';
 import { StaticImageData } from 'next/image';
 
-export const SkillLogo1: Record<string, StaticImageData> = {
-  HTML: htmlLogo,
-  CSS: cssLogo,
-  JavaScript: javascriptLogo,
-  NextJS: nextjsLogo,
-  NuxtJS: nuxtjsLogo,
-  Vite: viteLogo,
+export enum Skill {
+  HTML = 'HTML',
+  CSS = 'CSS',
+  JavaScript = 'JavaScript',
+  Next = 'Next',
+  Nuxt = 'Nuxt',
+  Vite = 'Vite',
+  React = 'React',
+  Vue = 'Vue',
+  TypeScript = 'TypeScript',
+  TailwindCSS = 'TailwindCSS',
+  Figma = 'Figma',
+  GraphQL = 'GraphQL',
+  Linux = 'Linux',
+  Git = 'Git',
+  Docker = 'Docker',
+  NestJS = 'NestJS',
+  Go = 'Go',
+  MySQL = 'MySQL',
+}
+
+export const SkillMap: Record<Skill, StaticImageData> = {
+  [Skill.HTML]: htmlLogo,
+  [Skill.CSS]: cssLogo,
+  [Skill.JavaScript]: javascriptLogo,
+  [Skill.Next]: nextjsLogo,
+  [Skill.Nuxt]: nuxtjsLogo,
+  [Skill.Vite]: viteLogo,
+  [Skill.React]: reactLogo,
+  [Skill.Vue]: vueLogo,
+  [Skill.TypeScript]: typescriptLogo,
+  [Skill.TailwindCSS]: tailwindcssLogo,
+  [Skill.Figma]: figmaLogo,
+  [Skill.GraphQL]: graphqlLogo,
+  [Skill.Linux]: linuxLogo,
+  [Skill.Git]: gitLogo,
+  [Skill.Docker]: dockerLogo,
+  [Skill.NestJS]: nestjsLogo,
+  [Skill.Go]: goLogo,
+  [Skill.MySQL]: mysqlLogo,
 };
 
-export const SkillLogo2: Record<string, StaticImageData> = {
-  React: reactLogo,
-  Vue: vueLogo,
-  TypeScript: typescriptLogo,
-  TailwindCSS: tailwindcssLogo,
-  Figma: figmaLogo,
-  GraphQL: graphqlLogo,
-};
-
-export const SkillLogo3: Record<string, StaticImageData> = {
-  Linux: linuxLogo,
-  Git: gitLogo,
-  Docker: dockerLogo,
-  NestJS: nestjsLogo,
-  Go: goLogo,
-  MySQL: mysqlLogo,
+export const SkillIconMap: Record<Skill, string> = {
+  [Skill.HTML]: 'devicon-html5-plain',
+  [Skill.CSS]: 'devicon-css3-plain',
+  [Skill.JavaScript]: 'devicon-javascript-plain',
+  [Skill.Next]: 'devicon-nextjs-plain',
+  [Skill.Nuxt]: 'devicon-nuxtjs-plain',
+  [Skill.Vite]: 'devicon-vitejs-plain',
+  [Skill.React]: 'devicon-react-original',
+  [Skill.Vue]: 'devicon-vuejs-plain',
+  [Skill.TypeScript]: 'devicon-typescript-plain',
+  [Skill.TailwindCSS]: 'devicon-tailwindcss-original',
+  [Skill.Figma]: 'devicon-figma-plain',
+  [Skill.GraphQL]: 'devicon-graphql-plain',
+  [Skill.Linux]: 'devicon-linux-plain',
+  [Skill.Git]: 'devicon-git-plain',
+  [Skill.Docker]: 'devicon-docker-plain',
+  [Skill.NestJS]: 'devicon-nestjs-original',
+  [Skill.Go]: 'devicon-go-original-wordmark',
+  [Skill.MySQL]: 'devicon-mysql-original',
 };

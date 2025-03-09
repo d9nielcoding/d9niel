@@ -31,7 +31,7 @@ const NavCard: React.FC<NavCardProps> = ({ work, onSelect, onDeselect }) => {
 
   return (
     <div
-      className="flex gap-1 justify-between items-center min-w-[260px] hover:bg-neutral-800 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] rounded-xl p-4 transition-all duration-300 ease-in-out"
+      className="flex gap-1 justify-between items-center min-w-[260px] hover:bg-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] rounded-xl p-4 transition-all duration-300 ease-in-out"
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}

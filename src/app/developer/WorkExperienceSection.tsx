@@ -1,11 +1,11 @@
 'use client';
+import SectionTitle from '@/components/SectionTitle';
 import {
   WorkContent,
   WorkExperienceContent,
 } from '@/constants/work-experience';
 import { useState } from 'react';
 import NavCard from './NavCard';
-
 const WorkExperienceSection: React.FC = () => {
   const [selectedWork, setSelectedWork] =
     useState<WorkExperienceContent | null>(null);
@@ -19,8 +19,9 @@ const WorkExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col mt-2">
-      <div className="flex gap-10 h-[450px] p-6 rounded-3xl">
+    <div className="flex flex-col my-10">
+      <SectionTitle title="Work Experience" />
+      <div className="flex gap-10 h-[450px] p-6 rounded-3xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% bg-opacity-20 mt-10">
         <div
           id="left-column"
           className="flex flex-col w-1/3 p-4 justify-center"
@@ -45,7 +46,7 @@ const WorkExperienceSection: React.FC = () => {
               {selectedWork.detail.bulletPoints.map((point, index) => (
                 <li
                   key={`${selectedWork.preview.companyName}-${index}`}
-                  className="text-neutral-300 flex gap-2"
+                  className="text-neutral-100 flex gap-2"
                 >
                   <div className="text-neutral-600 bg-primary mt-2 w-2 h-2 rounded-full shrink-0" />
                   {point}
@@ -53,9 +54,9 @@ const WorkExperienceSection: React.FC = () => {
               ))}
             </ul>
           ) : (
-            <h1 className="text-2xl font-bold text-neutral-600">
-              Work Experience
-            </h1>
+            <h3 className="text-xl font-bold text-neutral-100">
+              Hover the left column to check things out!
+            </h3>
           )}
         </div>
       </div>

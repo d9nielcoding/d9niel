@@ -1,6 +1,6 @@
 'use client';
 import SectionTitle from '@/components/SectionTitle';
-import { SkillLogo1, SkillLogo2, SkillLogo3 } from '@/constants/skill-images';
+import { Skill, SkillMap } from '@/constants/skill-images';
 
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
@@ -59,9 +59,10 @@ const SkillsStackSection: React.FC = () => {
   };
 
   // Duplicate skills array for seamless infinite scroll
-  const skillList = [...Object.keys(SkillLogo1), ...Object.keys(SkillLogo1)];
-  const skillList2 = [...Object.keys(SkillLogo2), ...Object.keys(SkillLogo2)];
-  const skillList3 = [...Object.keys(SkillLogo3), ...Object.keys(SkillLogo3)];
+  const allSkills = Object.keys(SkillMap);
+  const skillList = [...allSkills.slice(0, 6), ...allSkills.slice(0, 6)];
+  const skillList2 = [...allSkills.slice(6, 12), ...allSkills.slice(6, 12)];
+  const skillList3 = [...allSkills.slice(12, 18), ...allSkills.slice(12, 18)];
   const listContent = useMemo(
     () => (
       <div className="flex flex-col gap-4">
@@ -70,7 +71,7 @@ const SkillsStackSection: React.FC = () => {
             return (
               <SkillCard key={`skill-${index}`}>
                 <Image
-                  src={SkillLogo1[skill]}
+                  src={SkillMap[skill as Skill]}
                   alt={skill}
                   height={46}
                   width={46}
@@ -84,7 +85,7 @@ const SkillsStackSection: React.FC = () => {
             return (
               <SkillCard key={`skill-${index}`}>
                 <Image
-                  src={SkillLogo2[skill]}
+                  src={SkillMap[skill as Skill]}
                   alt={skill}
                   height={46}
                   width={46}
@@ -98,7 +99,7 @@ const SkillsStackSection: React.FC = () => {
             return (
               <SkillCard key={`skill-${index}`}>
                 <Image
-                  src={SkillLogo3[skill]}
+                  src={SkillMap[skill as Skill]}
                   alt={skill}
                   height={46}
                   width={46}
@@ -114,7 +115,7 @@ const SkillsStackSection: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <SectionTitle title="Skills Stack" />
+      <SectionTitle title="Skill Stack" />
       <div
         className="overflow-hidden"
         onPointerEnter={onPointerEnter}
@@ -126,7 +127,7 @@ const SkillsStackSection: React.FC = () => {
       >
         <div
           ref={movingContainer}
-          className="flex gap-4 w-fit py-10"
+          className="flex gap-4 w-fit py-8"
           style={{
             maskImage:
               'linear-gradient(to bottom, transparent 0%, black 40%, black 60%, transparent 100%)',

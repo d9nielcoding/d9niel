@@ -1,3 +1,4 @@
+import ProjectSection from './ProjectSection';
 import SkillsStackSection from './SkillSection';
 import WorkExperienceSection from './WorkExperienceSection';
 
@@ -6,6 +7,7 @@ export default function Developer() {
     <div className="flex flex-col gap-10">
       <WorkExperienceSection />
       <SkillsStackSection />
+      <ProjectSection />
     </div>
   );
 }
