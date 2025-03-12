@@ -36,16 +36,20 @@ const Footer: React.FC = () => {
             </div>
           </Link>
         </Tooltip>
-        <Link href="https://linktr.ee/d9niel">
-          <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
-            <LinktreeIcon className="w-4 h-4 text-white" />
-          </div>
-        </Link>
-        <Link href="https://www.instagram.com/d9niel.work">
-          <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
-            <InstagramLogoIcon className="w-4 h-4 text-white" />
-          </div>
-        </Link>
+        <Tooltip description="Check out my Linktree">
+          <Link href="https://linktr.ee/d9niel">
+            <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
+              <LinktreeIcon className="w-4 h-4 text-white" />
+            </div>
+          </Link>
+        </Tooltip>
+        <Tooltip description="DM me on Instagram">
+          <Link href="https://www.instagram.com/d9niel.work">
+            <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
+              <InstagramLogoIcon className="w-4 h-4 text-white" />
+            </div>
+          </Link>
+        </Tooltip>
       </div>
       <p>© 2025 D9niel</p>
     </footer>

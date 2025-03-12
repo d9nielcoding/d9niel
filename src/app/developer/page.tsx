@@ -1,3 +1,4 @@
+import ProfileLinksSection from './ProfileLinksSection';
 import ProjectSection from './ProjectSection';
 import SkillsStackSection from './SkillSection';
 import WorkExperienceSection from './WorkExperienceSection';
@@ -8,6 +9,7 @@ export default function Developer() {
       <WorkExperienceSection />
       <SkillsStackSection />
       <ProjectSection />
+      <ProfileLinksSection />
     </div>
   );
 }
