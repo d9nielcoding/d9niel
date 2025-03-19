@@ -8,7 +8,7 @@ interface NavCardProps {
 }
 
 const NavCard: React.FC<NavCardProps> = ({ work, onSelect, onDeselect }) => {
-  const [isLocked, setIsLocked] = useState(false);
+  const [isLocked] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const handleMouseOver = () => {

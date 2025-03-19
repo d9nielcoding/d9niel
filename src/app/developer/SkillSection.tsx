@@ -11,9 +11,9 @@ import { useMemo, useRef, useState } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 const SkillsStackSection: React.FC = () => {
-  const [isReversed, setIsReversed] = useState(false);
+  const [isReversed] = useState(false);
   const movingContainer = useRef<HTMLDivElement>(null);
-  let timeline = useRef<GSAPTimeline>(null);
+  const timeline = useRef<GSAPTimeline>(null);
 
   useGSAP(
     () => {
@@ -38,7 +38,7 @@ const SkillsStackSection: React.FC = () => {
     { dependencies: [isReversed] }
   );
 
-  let timelineTimeScaleTween = useRef<GSAPTween>(null);
+  const timelineTimeScaleTween = useRef<GSAPTween>(null);
 
   const onPointerEnter = () => {
     if (!timeline.current) return;
@@ -59,12 +59,13 @@ const SkillsStackSection: React.FC = () => {
   };
 
   // Duplicate skills array for seamless infinite scroll
-  const allSkills = Object.keys(SkillMap);
-  const skillList = [...allSkills.slice(0, 6), ...allSkills.slice(0, 6)];
-  const skillList2 = [...allSkills.slice(6, 12), ...allSkills.slice(6, 12)];
-  const skillList3 = [...allSkills.slice(12, 18), ...allSkills.slice(12, 18)];
-  const listContent = useMemo(
-    () => (
+  const listContent = useMemo(() => {
+    const allSkills = Object.keys(SkillMap);
+    const skillList = [...allSkills.slice(0, 6), ...allSkills.slice(0, 6)];
+    const skillList2 = [...allSkills.slice(6, 12), ...allSkills.slice(6, 12)];
+    const skillList3 = [...allSkills.slice(12, 18), ...allSkills.slice(12, 18)];
+
+    return (
       <div className="flex flex-col gap-4">
         <div className="flex gap-4 -translate-x-10">
           {skillList.map((skill, index) => {
@@ -109,9 +110,8 @@ const SkillsStackSection: React.FC = () => {
           })}
         </div>
       </div>
-    ),
-    []
-  );
+    );
+  }, []);
 
   return (
     <div className="flex flex-col gap-4">

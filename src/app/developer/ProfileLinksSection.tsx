@@ -1,6 +1,7 @@
 import LeetcodeIcon from '@/components/icons/Leetcode';
 import MediumIcon from '@/components/icons/Medium';
-import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import Tooltip from '@/components/Tooltip';
+import { ExternalLinkIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import Link from 'next/link';
 
 const ProfileLinksSection: React.FC = () => {
@@ -21,6 +22,32 @@ const ProfileLinksSection: React.FC = () => {
         <MediumIcon className="h-[22px] fill-neutral-300" />
       </div>
       {/* </Link> */}
+      <Link
+        href="https://drive.google.com/file/d/1tQQTO-LkhkGW86ymw6ObvigmewA7NmBK/view?usp=drive_link"
+        target="_blank"
+      >
+        <button className="bg-primary rounded-full flex items-center justify-center h-8 px-4">
+          <Tooltip description="Resume in Traditional Chinese">
+            <div className="flex items-center gap-2">
+              <span className="text-white"> Resume </span>
+              <ExternalLinkIcon className="h-[22px] fill-white" />
+            </div>
+          </Tooltip>
+        </button>
+      </Link>
+      <Link
+        href="https://drive.google.com/file/d/1t9yMjrmg-UzLr9BpHL514qcX1xuhWB4o/view?usp=drive_link"
+        target="_blank"
+      >
+        <button className="bg-primary rounded-full flex items-center justify-center h-8 px-4">
+          <Tooltip description="Resume in English">
+            <div className="flex items-center gap-2">
+              <span className="text-white"> Resume (Eng) </span>
+              <ExternalLinkIcon className="h-[22px] fill-white" />
+            </div>
+          </Tooltip>
+        </button>
+      </Link>
     </div>
   );
 };
