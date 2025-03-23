@@ -1,5 +1,6 @@
-import poklist from '@/assets/images/poklist.png';
-import ramenMove from '@/assets/images/ramen-move.png';
+import easyWallet from '@/assets/images/projects/easy-wallet.png';
+import poklist from '@/assets/images/projects/poklist.png';
+import ramenMove from '@/assets/images/projects/ramen-move.png';
 import { StaticImageData } from 'next/image';
 import { Skill } from './skill-images';
 
@@ -34,5 +35,13 @@ export const projects: ProjectCardProps[] = [
     image: ramenMove,
     roles: [ProjectRole.ProductManager],
     techStack: [],
+  },
+  {
+    title: 'Easy Wallet',
+    description: 'A demo application for a web3 wallet.',
+    image: easyWallet,
+    roles: [ProjectRole.Frontend],
+    techStack: [Skill.React, Skill.Next, Skill.TypeScript, Skill.TailwindCSS],
+    link: 'https://easy-wallet-six.vercel.app/',
   },
 ];

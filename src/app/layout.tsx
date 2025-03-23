@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Nunito } from 'next/font/google';
 import './globals.css';
+import Favicon from '/public/d9niel-notion.png';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,6 +24,7 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: 'D9niel',
   description: "Let's rethink, reinvent, and challenge the world together.",
+  icons: [{ rel: 'icon', url: Favicon.src }],
 };
 
 export default function RootLayout({
@@ -45,7 +47,7 @@ export default function RootLayout({
       >
         <div role="wrapper" className="max-w-screen-lg mx-auto">
           <Header />
-          <main className="mt-20 mb-10">{children}</main>
+          <main className="mt-16 mb-10">{children}</main>
           <Footer />
         </div>
       </body>

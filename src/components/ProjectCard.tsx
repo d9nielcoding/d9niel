@@ -14,12 +14,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <div className="flex flex-col rounded-xl bg-neutral-900 border-2 border-neutral-700 w-full max-w-[340px] overflow-hidden">
-      <Image
-        src={image}
-        alt={title}
-        className="h-[150px] w-full object-cover"
-      />
+    <div className="group flex flex-col rounded-xl bg-neutral-900 border-2 border-neutral-700 w-full max-w-[340px] overflow-hidden">
+      <div className="relative h-[150px] w-full overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          className="h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
+        />
+      </div>
       <div id="project-card-content" className="px-6 pt-4 pb-6">
         <h3 className="text-xl font-bold">{title}</h3>
         <div className="flex gap-2 mt-2">
@@ -34,8 +36,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
         {link && (
-          <Link href={link}>
+          <Link
+            href={link}
+            className="mt-4 flex justify-end items-center gap-2 text-white"
+          >
             <ExternalLinkIcon className="w-4 h-4" />
+            <p>Demo</p>
           </Link>
         )}
       </div>

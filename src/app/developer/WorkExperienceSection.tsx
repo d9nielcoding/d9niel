@@ -19,7 +19,7 @@ const WorkExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col my-10">
+    <div className="flex flex-col mt-20 mb-10">
       <SectionTitle title="Work Experience" />
       <div className="flex gap-10 h-[450px] p-6 rounded-3xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% bg-opacity-20 mt-10">
         <div
