@@ -35,7 +35,6 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <link
           rel="stylesheet"
           type="text/css"
