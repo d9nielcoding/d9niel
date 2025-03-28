@@ -22,12 +22,14 @@ const HeroSection: React.FC = () => {
       const setupInfiniteTextAnimation = () => {
         timeline.current?.kill();
         gsap.set(animatingWords.current, { autoAlpha: 1 });
+        gsap.set(Array.from(targets || []), { opacity: 1 });
+
         timeline.current = gsap
           .timeline({
             defaults: { ease: 'power4.inOut', repeat: -1 },
           })
           .from(Array.from(targets || []), {
-            y: 80,
+            y: 40,
             duration: duration,
             opacity: 0,
             stagger: {
@@ -39,7 +41,7 @@ const HeroSection: React.FC = () => {
           .to(
             Array.from(targets || []),
             {
-              y: -80,
+              y: -40,
               duration: duration,
               opacity: 0,
               stagger: {
@@ -53,6 +55,7 @@ const HeroSection: React.FC = () => {
       };
 
       setupInfiniteTextAnimation();
+      console.log('🚩 useGSAP');
     },
     { dependencies: [animatingWords] }
   );
@@ -64,10 +67,14 @@ const HeroSection: React.FC = () => {
           <div className="flex gap-3">
             Hello! I&apos;m a{' '}
             <div ref={animatingWords} className="text-primary grid mt-[1px]">
-              <span className="col-[1/2] row-[1/2]">Frontend Developer</span>
-              <span className="col-[1/2] row-[1/2]">Career Consultant</span>
-              <span className="col-[1/2] row-[1/2]">Creator</span>
-              <span className="col-[1/2] row-[1/2]">Thinker</span>
+              <span className="col-[1/2] row-[1/2] opacity-0">
+                Frontend Developer
+              </span>
+              <span className="col-[1/2] row-[1/2] opacity-0">
+                Career Consultant
+              </span>
+              <span className="col-[1/2] row-[1/2] opacity-0">Creator</span>
+              <span className="col-[1/2] row-[1/2] opacity-0">Thinker</span>
             </div>
           </div>
           Travis Daniel
