@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #EDEDED;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #EDEDED;
   --primary: #7135DA;
   --secondary: #D4AF37;
   --neutral-100: #F4F2F7;
@@ -16,26 +16,7 @@
   --neutral-700: #403E43;
   --neutral-800: #222025;
   --neutral-900: #1E1B22; 
-  --card-background: #F5F3F7;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171717;
-    --foreground: #EDEDED;
-    --primary: #7135DA;
-    --secondary: #D4AF37;
-    --neutral-100: #F4F2F7;
-    --neutral-200: #D6D4D9;
-    --neutral-300: #B8B6BB;
-    --neutral-400: #9A989D;
-    --neutral-500: #7C7A7F;
-    --neutral-600: #5E5C61;
-    --neutral-700: #403E43;
-    --neutral-800: #222025;
-    --neutral-900: #1E1B22; 
-    --card-background: #1E1B22;
-  }
+  --card-background: #1E1B22;
 }
 
 body {
