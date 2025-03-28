@@ -10,15 +10,15 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col justify-center items-center p-4">
-      <div className="flex gap-4 my-8">
+    <footer className="flex flex-col items-center justify-center p-4">
+      <div className="my-8 flex gap-4">
         <Tooltip description="Contact me as a developer">
           <Link href="mailto:daniel.cai09g@nctu.edu.tw">
-            <div className="flex justify-center items-center rounded-full bg-primary h-8">
-              <span className="relative z-10 flex h-8 w-8 items-center justify-center">
+            <div className="flex h-8 items-center justify-center rounded-full bg-primary">
+              <span className="relative flex h-8 w-8 items-center justify-center">
                 <EnvelopeClosedIcon className="h-4 w-4 text-white" />
               </span>
-              <span className="relative z-10 flex h-8 w-8 items-center justify-center -ml-2">
+              <span className="relative -ml-2 flex h-8 w-8 items-center justify-center">
                 <CodeIcon className="h-4 w-4 text-white" />
               </span>
             </div>
@@ -26,11 +26,11 @@ const Footer: React.FC = () => {
         </Tooltip>
         <Tooltip description="Contact me for other services">
           <Link href="mailto:d9niel.work@gmail.com">
-            <div className="flex justify-center items-center rounded-full bg-primary h-8">
-              <span className="relative z-10 flex h-8 w-8 items-center justify-center">
+            <div className="flex h-8 items-center justify-center rounded-full bg-primary">
+              <span className="relative flex h-8 w-8 items-center justify-center">
                 <EnvelopeClosedIcon className="h-4 w-4 text-white" />
               </span>
-              <span className="relative z-10 flex h-8 w-8 items-center justify-center -ml-2">
+              <span className="relative -ml-2 flex h-8 w-8 items-center justify-center">
                 <ChatBubbleIcon className="h-4 w-4 text-white" />
               </span>
             </div>
@@ -38,15 +38,15 @@ const Footer: React.FC = () => {
         </Tooltip>
         <Tooltip description="Check out my Linktree">
           <Link href="https://linktr.ee/d9niel">
-            <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
-              <LinktreeIcon className="w-4 h-4 text-white" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+              <LinktreeIcon className="h-4 w-4 text-white" />
             </div>
           </Link>
         </Tooltip>
         <Tooltip description="DM me on Instagram">
           <Link href="https://www.instagram.com/d9niel.work">
-            <div className="flex justify-center items-center rounded-full bg-primary h-8 w-8">
-              <InstagramLogoIcon className="w-4 h-4 text-white" />
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+              <InstagramLogoIcon className="h-4 w-4 text-white" />
             </div>
           </Link>
         </Tooltip>

@@ -55,18 +55,17 @@ const HeroSection: React.FC = () => {
       };
 
       setupInfiniteTextAnimation();
-      console.log('🚩 useGSAP');
     },
     { dependencies: [animatingWords] }
   );
 
   return (
-    <div className="flex items-center justify-between h-[500px] gap-4">
-      <div className="w-3/5 flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">
+    <div className="mt-10 flex h-fit flex-wrap items-center justify-center">
+      <div id="hero-text" className="flex flex-col items-center gap-4">
+        <h1 className="max-w-[600px] text-2xl font-bold">
           <div className="flex gap-3">
             Hello! I&apos;m a{' '}
-            <div ref={animatingWords} className="text-primary grid mt-[1px]">
+            <div ref={animatingWords} className="mt-[1px] grid text-primary">
               <span className="col-[1/2] row-[1/2] opacity-0">
                 Frontend Developer
               </span>
@@ -79,28 +78,28 @@ const HeroSection: React.FC = () => {
           </div>
           Travis Daniel
         </h1>
-        <h3 className="text-lg">
+        <h3 className="max-w-[580px] text-lg">
           I&apos;m passionate about understanding the world, understanding
           myself, and learning all possible ways to make the world a better
           place.
         </h3>
       </div>
-      <div className="w-2/5 flex justify-center items-center">
-        <div className="relative w-[320px] h-[320px] [perspective:1000px] group">
-          <div className="absolute w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div id="hero-image" className="flex items-center justify-center p-4">
+        <div className="group relative h-[320px] w-[320px] [perspective:1000px]">
+          <div className="absolute h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <Image
               src={d9nielNotion}
               alt="D9niel"
               width={320}
               height={320}
-              className="absolute w-full h-full rounded-full bg-primary p-8 [backface-visibility:hidden]"
+              className="absolute h-full w-full rounded-full bg-primary p-8 [backface-visibility:hidden]"
             />
             <Image
               src={d9nielNotionLaugh}
               alt="D9niel Laugh"
               width={320}
               height={320}
-              className="absolute w-full h-full rounded-full bg-secondary p-8 [transform:rotateY(180deg)] [backface-visibility:hidden]"
+              className="absolute h-full w-full rounded-full bg-secondary p-8 [backface-visibility:hidden] [transform:rotateY(180deg)]"
             />
           </div>
         </div>

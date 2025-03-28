@@ -3,7 +3,7 @@ import IntroCardSection from './IntroCardSection';
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col px-8 gap-10">
       <HeroSection />
       <IntroCardSection />
     </div>
