@@ -19,12 +19,12 @@ const WorkExperienceSection: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col mt-20 mb-10">
+    <div className="mb-10 mt-20 flex flex-col">
       <SectionTitle title="Work Experience" />
-      <div className="flex gap-10 h-[450px] p-6 rounded-3xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% bg-opacity-20 mt-10">
+      <div className="mt-10 flex h-[450px] gap-10 rounded-3xl bg-opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% p-6">
         <div
           id="left-column"
-          className="flex flex-col w-1/3 p-4 justify-center"
+          className="flex w-1/3 flex-col justify-center p-4"
         >
           {WorkContent.map(work => (
             <NavCard
@@ -37,7 +37,7 @@ const WorkExperienceSection: React.FC = () => {
         </div>
         <div
           id="right-column"
-          className={`flex flex-col gap-10 w-2/3 h-full rounded-xl justify-center items-center p-10 transition-all duration-300 ease-in-out ${
+          className={`flex h-full w-2/3 flex-col items-center justify-center gap-10 rounded-xl p-10 transition-all duration-300 ease-in-out ${
             selectedWork ? 'shadow-[0_0_25px_rgba(82,82,82,0.6)]' : ''
           }`}
         >
@@ -46,16 +46,16 @@ const WorkExperienceSection: React.FC = () => {
               {selectedWork.detail.bulletPoints.map((point, index) => (
                 <li
                   key={`${selectedWork.preview.companyName}-${index}`}
-                  className="text-neutral-100 flex gap-2"
+                  className="flex gap-2 text-neutral-100"
                 >
-                  <div className="text-neutral-600 bg-primary mt-2 w-2 h-2 rounded-full shrink-0" />
+                  <div className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary text-neutral-600" />
                   {point}
                 </li>
               ))}
             </ul>
           ) : (
             <h3 className="text-xl font-bold text-neutral-100">
-              Hover the left column to check things out!
+              Hover or press the row to check things out!
             </h3>
           )}
         </div>

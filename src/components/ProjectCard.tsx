@@ -3,18 +3,25 @@ import { SkillIconMap } from '@/constants/skill-images';
 import { ExternalLinkIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import { twMerge } from 'tailwind-merge';
 import Badge from './Badge';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: React.FC<ProjectCardProps & { className?: string }> = ({
   title,
   description,
   image,
   link,
   roles,
   techStack,
+  className,
 }) => {
   return (
-    <div className="group flex flex-col rounded-xl bg-neutral-900 border-2 border-neutral-700 w-full max-w-[340px] overflow-hidden">
+    <div
+      className={twMerge(
+        'group flex w-full max-w-[330px] flex-col overflow-hidden rounded-xl border-2 border-neutral-700 bg-neutral-900',
+        className
+      )}
+    >
       <div className="relative h-[150px] w-full overflow-hidden">
         <Image
           src={image}
@@ -22,15 +29,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="h-full object-cover transition-transform duration-300 ease-out group-hover:scale-110"
         />
       </div>
-      <div id="project-card-content" className="px-6 pt-4 pb-6">
+      <div id="project-card-content" className="px-6 pb-6 pt-4">
         <h3 className="text-xl font-bold">{title}</h3>
-        <div className="flex gap-2 mt-2">
+        <div className="mt-2 flex gap-2">
           {roles.map(role => (
             <Badge key={role} text={role} />
           ))}
         </div>
-        <p className="text-md text-neutral-400 mt-3">{description}</p>
-        <div className="flex gap-2 mt-6">
+        <p className="mt-3 text-md text-neutral-400">{description}</p>
+        <div className="mt-6 flex gap-2">
           {techStack.map(skill => (
             <i key={skill} className={`${SkillIconMap[skill]} text-lg`} />
           ))}
@@ -38,9 +45,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {link && (
           <Link
             href={link}
-            className="mt-4 flex justify-end items-center gap-2 text-white"
+            className="mt-4 flex items-center justify-end gap-2 text-white"
           >
-            <ExternalLinkIcon className="w-4 h-4" />
+            <ExternalLinkIcon className="h-4 w-4" />
             <p>Demo</p>
           </Link>
         )}

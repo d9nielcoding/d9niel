@@ -3,7 +3,7 @@ import { roles } from '@/constants/roles';
 
 const IntroCardSection: React.FC = () => {
   return (
-    <div className="flex flex-wrap gap-10 justify-center">
+    <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-10">
       {roles.map(role => (
         <Card
           key={role.name}

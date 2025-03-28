@@ -44,9 +44,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} antialiased`}
       >
-        <div role="wrapper" className="max-w-screen-lg mx-auto">
+        <div role="wrapper" className="mx-auto max-w-screen-lg">
           <Header />
-          <main className="mt-16 mb-10">{children}</main>
+          <main className="mb-10 mt-16 px-4">{children}</main>
           <Footer />
         </div>
       </body>
