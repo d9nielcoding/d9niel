@@ -12,15 +12,20 @@ const WorkExperienceSection: React.FC = () => {
     useState<WorkExperienceContent | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSelect = (work: WorkExperienceContent) => {
+  const handleClick = (work: WorkExperienceContent) => {
     setSelectedWork(work);
+
     if (window.innerWidth < 768) {
       setIsModalOpen(true);
     }
   };
 
-  const handleDeselect = () => {
-    if (window.innerWidth > 768) {
+  const handleMouseOver = (work: WorkExperienceContent) => {
+    setSelectedWork(work);
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 768) {
       setSelectedWork(null);
     }
   };
@@ -29,7 +34,7 @@ const WorkExperienceSection: React.FC = () => {
     <>
       <div className="mb-4 mt-10 flex flex-col md:mt-20">
         <SectionTitle title="Work Experience" />
-        <div className="mt-0 flex rounded-3xl bg-opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% p-6 sm:mt-10 md:h-fit md:gap-6">
+        <div className="mt-0 flex rounded-3xl bg-opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B2365] to-transparent to-70% p-6 sm:mt-10 md:h-[600px] md:gap-6 lg:h-[450px]">
           <div
             id="left-column"
             className="flex w-full flex-col justify-center pt-4 sm:p-4 md:w-[340px] md:min-w-[310px]"
@@ -38,14 +43,15 @@ const WorkExperienceSection: React.FC = () => {
               <NavCard
                 key={work.preview.companyName}
                 work={work}
-                onSelect={() => handleSelect(work)}
-                onDeselect={handleDeselect}
+                onClick={() => handleClick(work)}
+                onMouseOver={() => handleMouseOver(work)}
+                onMouseLeave={handleMouseLeave}
               />
             ))}
           </div>
           <div
             id="right-column"
-            className={`hidden h-full min-h-[360px] flex-col items-center justify-center gap-10 rounded-xl p-6 transition-all duration-300 ease-in-out md:flex md:w-2/3 lg:p-10 ${
+            className={`hidden h-full min-h-[360px] flex-col items-center justify-center gap-10 rounded-xl p-4 transition-all duration-300 ease-in-out md:flex md:w-2/3 lg:p-10 ${
               selectedWork ? 'shadow-[0_0_25px_rgba(82,82,82,0.6)]' : ''
             }`}
           >

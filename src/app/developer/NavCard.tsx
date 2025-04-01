@@ -3,35 +3,41 @@ import React, { useState } from 'react';
 
 interface NavCardProps {
   work: WorkExperienceContent;
-  onSelect: () => void;
-  onDeselect: () => void;
+  onClick: () => void;
+  onMouseOver: () => void;
+  onMouseLeave: () => void;
 }
 
-const NavCard: React.FC<NavCardProps> = ({ work, onSelect, onDeselect }) => {
+const NavCard: React.FC<NavCardProps> = ({
+  work,
+  onClick,
+  onMouseOver,
+  onMouseLeave,
+}) => {
   const [isLocked] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
   const handleMouseOver = () => {
     if (!isLocked) {
       setIsActive(true);
-      onSelect();
+      onMouseOver();
     }
   };
 
   const handleMouseLeave = () => {
     if (!isLocked) {
       setIsActive(false);
-      onDeselect();
+      onMouseLeave();
     }
   };
 
   const handleClick = () => {
-    // setIsLocked(!isLocked);
+    onClick();
   };
 
   return (
     <div
-      className="flex gap-1 justify-between items-center min-w-[260px] hover:bg-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.5)] rounded-xl p-4 transition-all duration-300 ease-in-out"
+      className="flex min-w-[260px] items-center justify-between gap-1 rounded-xl p-4 transition-all duration-300 ease-in-out hover:bg-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
       onMouseOver={handleMouseOver}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
@@ -43,13 +49,13 @@ const NavCard: React.FC<NavCardProps> = ({ work, onSelect, onDeselect }) => {
           {work.preview.companyName}
         </h5>
         <p
-          className={`text-sm transition-all duration-300 ease-in-out font-bold ${isActive ? 'text-foreground' : 'text-neutral-400 '}`}
+          className={`text-sm font-bold transition-all duration-300 ease-in-out ${isActive ? 'text-foreground' : 'text-neutral-400'}`}
         >
           {work.preview.jobTitle}
         </p>
       </div>
       <p
-        className={`text-sm transition-all duration-300 ease-in-out font-bold ${isActive ? 'text-foreground' : 'text-neutral-400'}`}
+        className={`text-sm font-bold transition-all duration-300 ease-in-out ${isActive ? 'text-foreground' : 'text-neutral-400'}`}
       >
         {work.preview.period}
       </p>
