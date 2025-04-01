@@ -8,7 +8,7 @@ const ProfileLinksSection: React.FC = () => {
   return (
     <div
       id="social-links-container"
-      className="mx-auto mt-10 flex w-fit flex-wrap justify-center gap-4 rounded-3xl border-2 border-primary px-6 py-4"
+      className="mx-auto mt-10 flex w-[320px] flex-wrap justify-center gap-4 rounded-3xl border-2 border-primary px-6 py-4 sm:w-fit"
     >
       <Link href="https://github.com/d9nielcoding" target="_blank">
         <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">

@@ -46,7 +46,7 @@ export default function RootLayout({
       >
         <div role="wrapper" className="mx-auto max-w-screen-lg">
           <Header />
-          <main className="mb-10 mt-16 px-4">{children}</main>
+          <main className="mb-10 mt-16 px-6">{children}</main>
           <Footer />
         </div>
       </body>

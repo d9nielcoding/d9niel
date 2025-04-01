@@ -60,32 +60,28 @@ const HeroSection: React.FC = () => {
   );
 
   return (
-    <div className="mt-10 flex h-fit flex-wrap items-center justify-center">
-      <div id="hero-text" className="flex flex-col items-center gap-4">
+    <div className="mt-10 flex h-fit flex-wrap-reverse items-center justify-center">
+      <div id="hero-text" className="flex flex-col items-start gap-4">
         <h1 className="max-w-[600px] text-2xl font-bold">
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-0 sm:flex-row sm:gap-3">
             Hello! I&apos;m a{' '}
             <div ref={animatingWords} className="mt-[1px] grid text-primary">
-              <span className="col-[1/2] row-[1/2] opacity-0">
-                Frontend Developer
-              </span>
-              <span className="col-[1/2] row-[1/2] opacity-0">
-                Career Consultant
-              </span>
+              <span className="col-[1/2] row-[1/2] opacity-0">Developer</span>
+              <span className="col-[1/2] row-[1/2] opacity-0">Consultant</span>
               <span className="col-[1/2] row-[1/2] opacity-0">Creator</span>
               <span className="col-[1/2] row-[1/2] opacity-0">Thinker</span>
             </div>
           </div>
           Travis Daniel
         </h1>
-        <h3 className="max-w-[580px] text-lg">
+        <h3 className="max-w-[370px] text-lg sm:max-w-[580px]">
           I&apos;m passionate about understanding the world, understanding
           myself, and learning all possible ways to make the world a better
           place.
         </h3>
       </div>
       <div id="hero-image" className="flex items-center justify-center p-4">
-        <div className="group relative h-[320px] w-[320px] [perspective:1000px]">
+        <div className="group relative h-[200px] w-[200px] [perspective:1000px] md:h-[320px] md:w-[320px]">
           <div className="absolute h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <Image
               src={d9nielNotion}

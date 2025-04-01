@@ -109,7 +109,7 @@ const Header: React.FC = () => {
         )}
       >
         <nav className="mt-4 px-8">
-          <ul className="flex flex-col gap-8 text-lg font-bold">
+          <ul className="flex flex-col text-lg font-bold">
             {links.map(link => (
               <li key={link.path}>
                 <span
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
             <li className="flex">
               <Link
                 href="/contact"
-                className="inline-block rounded-lg bg-primary px-6 py-2 text-foreground"
+                className="mt-6 inline-block rounded-lg bg-primary px-6 py-2 text-foreground"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
