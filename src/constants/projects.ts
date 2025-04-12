@@ -1,4 +1,5 @@
 import easyWallet from '@/assets/images/projects/easy-wallet.png';
+import orderBook from '@/assets/images/projects/order-book.png';
 import poklist from '@/assets/images/projects/poklist.png';
 import ramenMove from '@/assets/images/projects/ramen-move.png';
 import { StaticImageData } from 'next/image';
@@ -43,5 +44,13 @@ export const projects: ProjectCardProps[] = [
     roles: [ProjectRole.Frontend],
     techStack: [Skill.React, Skill.Next, Skill.TypeScript, Skill.TailwindCSS],
     link: 'https://easy-wallet-six.vercel.app/',
+  },
+  {
+    title: 'Order Book',
+    description: 'A demo application for a cryptocurrency order book.',
+    image: orderBook,
+    roles: [ProjectRole.Frontend],
+    techStack: [Skill.Vue, Skill.TypeScript],
+    link: 'https://orderbook-d9niel.vercel.app/',
   },
 ];

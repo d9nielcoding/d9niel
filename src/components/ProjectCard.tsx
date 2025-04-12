@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps & { className?: string }> = ({
   return (
     <div
       className={twMerge(
-        'group flex w-full max-w-[330px] flex-col overflow-hidden rounded-xl border-2 border-neutral-700 bg-neutral-900',
+        'group flex w-full max-w-[320px] flex-col overflow-hidden rounded-xl border-2 border-neutral-700 bg-neutral-900',
         className
       )}
     >
