@@ -1,3 +1,4 @@
+import axiosLogo from '@/assets/images/skills/axios.png';
 import cssLogo from '@/assets/images/skills/css.svg';
 import dockerLogo from '@/assets/images/skills/docker.webp';
 import figmaLogo from '@/assets/images/skills/figma.webp';
@@ -7,11 +8,13 @@ import graphqlLogo from '@/assets/images/skills/graphql.png';
 import htmlLogo from '@/assets/images/skills/html.png';
 import javascriptLogo from '@/assets/images/skills/javascript.png';
 import linuxLogo from '@/assets/images/skills/linux.png';
+import muiLogo from '@/assets/images/skills/mui.png';
 import mysqlLogo from '@/assets/images/skills/mysql.png';
 import nestjsLogo from '@/assets/images/skills/nestjs.svg';
 import nextjsLogo from '@/assets/images/skills/nextjs.svg';
 import nuxtjsLogo from '@/assets/images/skills/nuxtjs.svg';
 import reactLogo from '@/assets/images/skills/react.png';
+import reduxLogo from '@/assets/images/skills/redux.png';
 import tailwindcssLogo from '@/assets/images/skills/tailwindcss.png';
 import typescriptLogo from '@/assets/images/skills/typescript.png';
 import viteLogo from '@/assets/images/skills/vite.png';
@@ -37,6 +40,10 @@ export enum Skill {
   NestJS = 'NestJS',
   Go = 'Go',
   MySQL = 'MySQL',
+  //====
+  Axios = 'Axios',
+  MUI = 'MUI',
+  Redux = 'Redux',
 }
 
 export const SkillMap: Record<Skill, StaticImageData> = {
@@ -58,6 +65,10 @@ export const SkillMap: Record<Skill, StaticImageData> = {
   [Skill.NestJS]: nestjsLogo,
   [Skill.Go]: goLogo,
   [Skill.MySQL]: mysqlLogo,
+  //====
+  [Skill.Axios]: axiosLogo,
+  [Skill.MUI]: muiLogo,
+  [Skill.Redux]: reduxLogo,
 };
 
 export const SkillIconMap: Record<Skill, string> = {
@@ -79,4 +90,7 @@ export const SkillIconMap: Record<Skill, string> = {
   [Skill.NestJS]: 'devicon-nestjs-original',
   [Skill.Go]: 'devicon-go-original-wordmark',
   [Skill.MySQL]: 'devicon-mysql-original',
+  [Skill.Axios]: 'devicon-axios-plain',
+  [Skill.MUI]: 'devicon-materialui-plain',
+  [Skill.Redux]: 'devicon-redux-original',
 };
