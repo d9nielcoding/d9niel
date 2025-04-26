@@ -13,6 +13,7 @@ import mysqlLogo from '@/assets/images/skills/mysql.png';
 import nestjsLogo from '@/assets/images/skills/nestjs.svg';
 import nextjsLogo from '@/assets/images/skills/nextjs.svg';
 import nuxtjsLogo from '@/assets/images/skills/nuxtjs.svg';
+import quasarLogo from '@/assets/images/skills/quasar.png';
 import reactLogo from '@/assets/images/skills/react.png';
 import reduxLogo from '@/assets/images/skills/redux.png';
 import tailwindcssLogo from '@/assets/images/skills/tailwindcss.png';
@@ -44,6 +45,7 @@ export enum Skill {
   Axios = 'Axios',
   MUI = 'MUI',
   Redux = 'Redux',
+  Quasar = 'Quasar',
 }
 
 export const SkillMap: Record<Skill, StaticImageData> = {
@@ -69,6 +71,7 @@ export const SkillMap: Record<Skill, StaticImageData> = {
   [Skill.Axios]: axiosLogo,
   [Skill.MUI]: muiLogo,
   [Skill.Redux]: reduxLogo,
+  [Skill.Quasar]: quasarLogo,
 };
 
 export const SkillIconMap: Record<Skill, string> = {
@@ -93,4 +96,5 @@ export const SkillIconMap: Record<Skill, string> = {
   [Skill.Axios]: 'devicon-axios-plain',
   [Skill.MUI]: 'devicon-materialui-plain',
   [Skill.Redux]: 'devicon-redux-original',
+  [Skill.Quasar]: 'devicon-quasar-plain',
 };

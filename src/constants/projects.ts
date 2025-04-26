@@ -1,3 +1,4 @@
+import easyPayment from '@/assets/images/projects/easy-payment.png';
 import easyStock from '@/assets/images/projects/easy-stock.png';
 import easyWallet from '@/assets/images/projects/easy-wallet.png';
 import orderBook from '@/assets/images/projects/order-book.png';
@@ -68,5 +69,14 @@ export const projects: ProjectCardProps[] = [
       Skill.Redux,
     ],
     link: 'https://easy-stock-d9niel.vercel.app/',
+  },
+  {
+    title: 'Easy Payment',
+    description:
+      'A modern payment processing application built with Quasar Framework.',
+    image: easyPayment,
+    roles: [ProjectRole.Frontend],
+    techStack: [Skill.Vue, Skill.Quasar, Skill.TypeScript],
+    link: 'https://easy-payment-d9niel.vercel.app/',
   },
 ];
