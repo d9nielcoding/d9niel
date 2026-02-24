@@ -38,7 +38,7 @@ const ProfileLinksSection: React.FC = () => {
           </Tooltip>
         </button>
       </Link>
-      <Link
+      {/* <Link
         href="https://drive.google.com/file/d/1t9yMjrmg-UzLr9BpHL514qcX1xuhWB4o/view?usp=drive_link"
         target="_blank"
       >
@@ -50,7 +50,7 @@ const ProfileLinksSection: React.FC = () => {
             </div>
           </Tooltip>
         </button>
-      </Link>
+      </Link> */}
     </div>
   );
 };
